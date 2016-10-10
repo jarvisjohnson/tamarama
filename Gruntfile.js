@@ -25,6 +25,18 @@ module.exports = function(grunt) {
                 }
             },
         },
+        jshint: {
+          files: ['Gruntfile.js', 'app/src/**/*.js'],
+          options: {
+            // options here to override JSHint defaults
+            globals: {
+              jQuery: true,
+              console: true,
+              module: true,
+              document: true
+            }
+          }
+        },       
         watch: {
             options: {
                 livereload: true,
@@ -36,13 +48,19 @@ module.exports = function(grunt) {
                 files: [
                     '<%= config.app %>/public/{,*/}*.html',
                     '<%= config.app %>/public/css/{,*/}*.css',
-                    '<%= config.app %>/public/images/{,*/}*'
+                    '<%= config.app %>/public/images/{,*/}*',
+                    '<%= config.app %>/public/js/{,*/}*.min.js',
+                    '<%= jshint.files %>'
                 ]
             },
             compass: {
                 files: ['**/*.{scss,sass}'],
                 tasks: ['compass:dev']
             },
+            uglify: {
+                files: ['<%= jshint.files %>'],
+                tasks: ['uglify']
+            }            
         },
         compass: {
             dev: {
@@ -59,17 +77,54 @@ module.exports = function(grunt) {
                     environment: 'production'
                 }
             },
+        },
+        uglify: {
+          dist: {
+            files: {
+              'app/public/js/scripts.min.js': [
+                'app/src/javascripts/bootstrap/transition.js',
+                'app/src/javascripts/bootstrap/alert.js',
+                'app/src/javascripts/bootstrap/button.js',
+                'app/src/javascripts/bootstrap/carousel.js',
+                'app/src/javascripts/bootstrap/collapse.js',
+                'app/src/javascripts/bootstrap/dropdown.js',
+                'app/src/javascripts/bootstrap/modal.js',
+                'app/src/javascripts/bootstrap/tooltip.js',
+                'app/src/javascripts/bootstrap/popover.js',
+                'app/src/javascripts/bootstrap/scrollspy.js',
+                'app/src/javascripts/bootstrap/tab.js',
+                'app/src/javascripts/bootstrap/affix.js',
+                'app/src/javascripts/*.js',
+                'app/src/javascripts/_*.js'
+              ]
+            },
+            options: {
+              // JS source map: to enable, uncomment the lines below and update sourceMappingURL based on your install
+              // sourceMap: 'assets/js/scripts.min.js.map',
+              // sourceMappingURL: '/app/themes/roots/assets/js/scripts.min.js.map'
+            }
+          }       
+        },
+        clean: {
+            dist: [
+              'assets/css/main.min.css',
+              'assets/js/scripts.min.js'
+            ]
         }
-    });
+    });    
 
     // Load the plugin
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-jshint'); 
+    grunt.loadNpmTasks('grunt-contrib-uglify');       
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-connect');
 
+
     // Default task(s).
-    grunt.registerTask('default', ['connect:livereload', 'compass:dev', 'watch']);
+    grunt.registerTask('default', ['connect:livereload', 'compass:dev', 'uglify', 'watch']);
     // prod build
-    grunt.registerTask('prod', ['compass:prod']);
+    grunt.registerTask('prod', [ 'clean', 'compass:prod', 'uglify']);
 
 };
