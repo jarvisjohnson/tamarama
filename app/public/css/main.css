@@ -8038,8 +8038,8 @@ body {
   width: 100%;
   height: 100%;
   font-family: "Lora","Helvetica Neue",Helvetica,Arial,sans-serif;
-  color: white;
-  background-color: black;
+  color: #3473a4;
+  background-color: #f3f1e7;
 }
 
 /* line 13, ../../src/stylesheets/main.scss */
@@ -8079,7 +8079,7 @@ p {
 
 /* line 42, ../../src/stylesheets/main.scss */
 a {
-  color: #42dca3;
+  color: #3473a4;
   -webkit-transition: all .2s ease-in-out;
   -moz-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
@@ -8087,7 +8087,7 @@ a {
 /* line 48, ../../src/stylesheets/main.scss */
 a:hover, a:focus {
   text-decoration: none;
-  color: #1d9b6c;
+  color: #1b3d57;
 }
 
 /* line 54, ../../src/stylesheets/main.scss */
@@ -8355,16 +8355,16 @@ a:hover, a:focus {
 
 /* line 287, ../../src/stylesheets/main.scss */
 .btn-default {
-  border: 1px solid #42dca3;
-  color: #42dca3;
+  border: 1px solid #3473a4;
+  color: #3473a4;
   background-color: transparent;
 }
 /* line 292, ../../src/stylesheets/main.scss */
 .btn-default:hover, .btn-default:focus {
-  border: 1px solid #42dca3;
+  border: 1px solid #3473a4;
   outline: none;
   color: black;
-  background-color: #42dca3;
+  background-color: #3473a4;
 }
 
 /* line 300, ../../src/stylesheets/main.scss */
