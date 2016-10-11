@@ -148,7 +148,7 @@ a {
     }
 }
 
-.intro {
+.intro, #about {
     display: table;
     width: 100%;
     height: auto;
@@ -183,6 +183,9 @@ a {
             }
         }
     }
+}
+#about{
+    background: inherit;
 }
 
 .btn-circle {
