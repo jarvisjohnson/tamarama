@@ -61,6 +61,7 @@ a {
     text-transform: uppercase;
     font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
     .navbar-toggle {
+        line-height: calc(1.42857 * 14px);
         padding: 4px 6px;
         font-size: 16px;
         color: $primary;
@@ -68,14 +69,27 @@ a {
         &:active {
             outline: none;
         }
-        .menu-toggle:before{
-            content: 'CLOSE';
-            visibility: visibile;
+        &:before{
+            font-size: 3em;
+            line-height: calc(1.42857 * 14px);
+            vertical-align: middle;  
+            transition: all .2s ease;
+            display: inline-block;
+            width: 50px          
+        }
+        &:after{
+            content: "MENU";
+            line-height: calc(1.42857 * 14px);
+            display: none;
+            width: 50px             
         }
         &.collapsed{
-            .menu-toggle:before{
-                content: 'MENU';
-            }        
+            &:before {
+                display: none;
+            }
+            &:after{
+                display: inline-block;
+            }    
         }
     }
     .navbar-brand {
