@@ -58,14 +58,12 @@ a {
 .navbar-custom {
     visibility: hidden;
     margin-bottom: 0;
-    border-bottom: 1px solid rgba(white, 0.3);
     text-transform: uppercase;
     font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background-color: black;
     .navbar-toggle {
         padding: 4px 6px;
         font-size: 16px;
-        color: white;
+        color: $primary;
         &:focus,
         &:active {
             outline: none;
@@ -78,7 +76,7 @@ a {
         }
     }
     a {
-        color: white;
+        color: $primary;
     }
     .nav {
         li {
@@ -102,7 +100,7 @@ a {
                 a {
                     background-color: rgba(white, 0.3);
                     &:hover {
-                        color: white;
+                        color: $primary;
                     }
                 }
             }
@@ -133,7 +131,7 @@ a {
     height: auto;
     padding: 100px 0;
     text-align: center;
-    color: white;
+    color: $primary;
     background: url(../images/intro-bg.jpg) no-repeat bottom center scroll;
     background-color: black;
     -webkit-background-size: cover;
@@ -172,7 +170,7 @@ a {
     border: 2px solid white;
     border-radius: 100% !important;
     font-size: 40px;
-    color: white;
+    color: $primary;
     background: transparent;
     -webkit-transition: background .3s ease-in-out;
     -moz-transition: background .3s ease-in-out;
@@ -180,7 +178,7 @@ a {
     &:hover,
     &:focus {
         outline: none;
-        color: white;
+        color: $primary;
         background: rgba(white, 0.1);
     }
     i.animated {
@@ -244,7 +242,7 @@ a {
 .download-section {
     width: 100%;
     padding: 50px 0;
-    color: white;
+    color: $primary;
     background: url(../images/downloads-bg.jpg) no-repeat center center scroll;
     background-color: black;
     -webkit-background-size: cover;
@@ -315,6 +313,7 @@ ul.banner-social-buttons {
 }
 
 footer {
+    background: $footer-bg;
     padding: 50px 0;
     p {
         margin: 0;

@@ -28,8 +28,8 @@ tr.collapse.in    { display: table-row; }
 tbody.collapse.in { display: table-row-group; }
 
 .collapsing {
-  position: relative;
-  height: 0;
-  overflow: hidden;
-  @include transition(height .35s ease);
+  //position: relative;
+  width: 0;
+  //overflow: hidden;
+  @include transition(width .35s ease);
 }

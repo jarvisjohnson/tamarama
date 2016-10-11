@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+    'use strict';
 
     // Project configuration.
     grunt.initConfig({
@@ -6,6 +7,15 @@ module.exports = function(grunt) {
 
         config: {
             app: 'app'
+        },
+
+        jshint: {
+          options: {
+            strict: 'false',
+          },
+          all: [
+            'Gruntfile.js',
+          ]
         },
 
         connect: {
@@ -25,59 +35,7 @@ module.exports = function(grunt) {
                 }
             },
         },
-        jshint: {
-          files: ['Gruntfile.js', 'app/src/**/*.js'],
-          options: {
-            // options here to override JSHint defaults
-            globals: {
-              jQuery: true,
-              console: true,
-              module: true,
-              document: true
-            }
-          }
-        },       
-        watch: {
-            options: {
-                livereload: true,
-            },
-            livereload: {
-                options: {
-                    livereload: '<%= connect.options.livereload %>'
-                },
-                files: [
-                    '<%= config.app %>/public/{,*/}*.html',
-                    '<%= config.app %>/public/css/{,*/}*.css',
-                    '<%= config.app %>/public/images/{,*/}*',
-                    '<%= config.app %>/public/js/{,*/}*.min.js',
-                    '<%= jshint.files %>'
-                ]
-            },
-            compass: {
-                files: ['**/*.{scss,sass}'],
-                tasks: ['compass:dev']
-            },
-            uglify: {
-                files: ['<%= jshint.files %>'],
-                tasks: ['uglify']
-            }            
-        },
-        compass: {
-            dev: {
-                options: {
-                    sassDir: ['app/src/stylesheets'],
-                    cssDir: ['app/public/css'],
-                    environment: 'development'
-                }
-            },
-            prod: {
-                options: {
-                    sassDir: ['app/src/stylesheets'],
-                    cssDir: ['app/public/css'],
-                    environment: 'production'
-                }
-            },
-        },
+
         uglify: {
           dist: {
             files: {
@@ -100,31 +58,68 @@ module.exports = function(grunt) {
             },
             options: {
               // JS source map: to enable, uncomment the lines below and update sourceMappingURL based on your install
-              // sourceMap: 'assets/js/scripts.min.js.map',
-              // sourceMappingURL: '/app/themes/roots/assets/js/scripts.min.js.map'
+              sourceMap: 'app/public/js/scripts.min.js.map'
             }
-          }       
+          }
         },
-        clean: {
-            dist: [
-              'assets/css/main.min.css',
-              'assets/js/scripts.min.js'
-            ]
-        }
-    });    
+
+
+        compass: {
+            dev: {
+                options: {
+                    sassDir: ['app/src/stylesheets'],
+                    cssDir: ['app/public/css'],
+                    environment: 'development'
+                }
+            },
+            prod: {
+                options: {
+                    sassDir: ['app/src/stylesheets'],
+                    cssDir: ['app/public/css'],
+                    environment: 'production'
+                }
+            },
+        },        
+
+        watch: {
+            uglify: {
+                files: [
+                  '<%= jshint.all %>'
+                ],
+                tasks: ['uglify']
+            },
+            compass: {
+                files: ['**/*.{scss,sass}'],
+                tasks: ['compass:dev']
+            },            
+            options: {
+                livereload: true,
+            },
+            livereload: {
+                options: {
+                    livereload: '<%= connect.options.livereload %>'
+                },
+                files: [
+                    '<%= config.app %>/public/{,*/}*.html',
+                    '<%= config.app %>/public/css/{,*/}*.css',
+                    '<%= config.app %>/public/images/{,*/}*',
+                    '<%= config.app %>/public/js/{,*/}*'
+                ]
+            },
+        },
+
+    });
 
     // Load the plugin
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-jshint'); 
-    grunt.loadNpmTasks('grunt-contrib-uglify');       
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-connect');
-
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-compass');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task(s).
     grunt.registerTask('default', ['connect:livereload', 'compass:dev', 'uglify', 'watch']);
     // prod build
-    grunt.registerTask('prod', [ 'clean', 'compass:prod', 'uglify']);
+    grunt.registerTask('prod', [ 'clean', 'uglify', 'compass:prod']);
 
 };
