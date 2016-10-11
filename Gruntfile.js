@@ -10,13 +10,17 @@ module.exports = function(grunt) {
         },
 
         jshint: {
+          files: ['Gruntfile.js', 'app/src/**/*.js'],
           options: {
-            strict: 'false',
-          },
-          all: [
-            'Gruntfile.js',
-          ]
-        },
+            // options here to override JSHint defaults
+            globals: {
+              jQuery: true,
+              console: true,
+              module: true,
+              document: true
+            }
+          }
+        }, 
 
         connect: {
             options: {
@@ -83,9 +87,7 @@ module.exports = function(grunt) {
 
         watch: {
             uglify: {
-                files: [
-                  '<%= jshint.all %>'
-                ],
+                files: ['<%= jshint.files %>'],
                 tasks: ['uglify']
             },
             compass: {
@@ -103,7 +105,7 @@ module.exports = function(grunt) {
                     '<%= config.app %>/public/{,*/}*.html',
                     '<%= config.app %>/public/css/{,*/}*.css',
                     '<%= config.app %>/public/images/{,*/}*',
-                    '<%= config.app %>/public/js/{,*/}*'
+                    '<%= config.app %>/public/js/{,*/}*.js'
                 ]
             },
         },
