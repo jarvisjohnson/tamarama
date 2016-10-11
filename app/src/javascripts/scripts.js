@@ -60,7 +60,20 @@ $(document).ready(function(){
       } else {
         // Else remove it.
         $('nav').removeClass('sticky');
+      };
+
+      // If the document is scrolled 100%
+      if( y >= windowHeight) {
+        
+        // Add the "sticky" class
+        $('.fixed-wrap').addClass('no-fix');
+      } else {
+        // Else remove it.
+        $('.fixed-wrap').removeClass('no-fix');
       }
+
+      
+
     });
 
   // Call it on resize.

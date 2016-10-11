@@ -184,6 +184,24 @@ a {
         }
     }
 }
+.intro{
+    margin-bottom:1476px;
+    position: absolute;
+}
+.fixed-wrap{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    //height: 100%;
+}
+.fixed-wrap.no-fix{
+    position: absolute;
+    top: 1476px;   
+    height: 100%; 
+}
 #about{
     background: inherit;
 }
