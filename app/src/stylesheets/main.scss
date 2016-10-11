@@ -68,6 +68,15 @@ a {
         &:active {
             outline: none;
         }
+        .menu-toggle:before{
+            content: 'CLOSE';
+            visibility: visibile;
+        }
+        &.collapsed{
+            .menu-toggle:before{
+                content: 'MENU';
+            }        
+        }
     }
     .navbar-brand {
         font-weight: 700;

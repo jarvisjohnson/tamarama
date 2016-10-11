@@ -57,6 +57,7 @@
   -webkit-overflow-scrolling: touch;
   li{
     overflow-x: hidden;
+    width: 0;
   }
 
   &.in {
