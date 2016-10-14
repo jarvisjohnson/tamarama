@@ -62,10 +62,11 @@ $(document).ready(function(){
     // Hasn't been tested in iOS 8
     $(document).scroll(function(){
 
-      console.log(getDocHeight());
       
       // Store the document scroll function in a variable
       var y = $(this).scrollTop();
+
+      console.log("y:", y);      
       
       // If the document is scrolled 90%
       if( y > ninetypercent) {
@@ -82,11 +83,11 @@ $(document).ready(function(){
         
         // Add the "sticky" class
         $('.fixed-wrap').addClass('fix');
-        //console.log(getDocHeight());
       } else {
         // Else remove it.
         $('.fixed-wrap').removeClass('fix').css('margin-top' , windowHeight);
-        //console.log(getDocHeight());
+        $('body').css('height' , getDocHeight());
+
       }
 
     });
