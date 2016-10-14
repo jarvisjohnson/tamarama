@@ -32,6 +32,14 @@ $('.navbar-collapse ul li a').click(function() {
     $(this).closest('.collapse').collapse('toggle');
 });
 
+function getDocHeight() {
+    var D = document;
+    return Math.max(
+        D.body.scrollHeight, D.documentElement.scrollHeight,
+        D.body.offsetHeight, D.documentElement.offsetHeight,
+        D.body.clientHeight, D.documentElement.clientHeight
+    );
+}
 
 $(document).ready(function(){
   
@@ -40,7 +48,12 @@ $(document).ready(function(){
     
     // Variables
     var windowHeight = $(window).height();
-    
+    var fixedHeight = $('.fixed-wrap').height();
+
+    $('.intro, #about').height(windowHeight);
+    $( '.intro' ).css('margin-bottom' , fixedHeight);
+    $('body').css('height' , getDocHeight());
+
     // Find the value of 90% of the viewport height
     var ninetypercent = .9 * windowHeight;
     
@@ -48,6 +61,8 @@ $(document).ready(function(){
     // Does not work in iOS 7 or below
     // Hasn't been tested in iOS 8
     $(document).scroll(function(){
+
+      console.log(getDocHeight());
       
       // Store the document scroll function in a variable
       var y = $(this).scrollTop();
@@ -63,16 +78,16 @@ $(document).ready(function(){
       };
 
       // If the document is scrolled 100%
-      if( y >= windowHeight) {
+      if( y < windowHeight ) {
         
         // Add the "sticky" class
-        $('.fixed-wrap').addClass('no-fix');
+        $('.fixed-wrap').addClass('fix');
+        //console.log(getDocHeight());
       } else {
         // Else remove it.
-        $('.fixed-wrap').removeClass('no-fix');
+        $('.fixed-wrap').removeClass('fix').css('margin-top' , windowHeight);
+        //console.log(getDocHeight());
       }
-
-      
 
     });
 
