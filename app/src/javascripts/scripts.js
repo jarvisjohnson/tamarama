@@ -64,9 +64,7 @@ $(document).ready(function(){
 
       
       // Store the document scroll function in a variable
-      var y = $(this).scrollTop();
-
-      console.log("y:", y);      
+      var y = $(this).scrollTop();   
       
       // If the document is scrolled 90%
       if( y > ninetypercent) {

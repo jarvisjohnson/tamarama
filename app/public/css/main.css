@@ -1406,7 +1406,7 @@ html {
 
 /* line 27, ../../src/stylesheets/bootstrap/_scaffolding.scss */
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "walsheim", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857;
   color: #333333;
@@ -7245,14 +7245,62 @@ button.close {
     display: none !important;
   }
 }
-/* line 5, ../../src/stylesheets/main.scss */
+@font-face {
+  font-family: dala-moa;
+  font-weight: bold;
+  src: url("../fonts/DalaMoaBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: dala-moa;
+  font-weight: light;
+  src: url("../fonts/DalaMoaLight.otf") format("opentype");
+}
+
+@font-face {
+  font-family: dala-moa;
+  font-weight: regular;
+  src: url("../fonts/DalaMoaRegular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: walsheim;
+  font-weight: regular;
+  src: url("../fonts/GT Walsheim Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: walsheim;
+  font-weight: medium;
+  src: url("../fonts/GT Walsheim Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: walsheim;
+  font-weight: light;
+  src: url("../fonts/GT Walsheim Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: minion;
+  font-weight: regular;
+  src: url("../fonts/MinionPro-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: circular;
+  font-weight: book;
+  src: url("../fonts/CircularStd-Book.otf") format("opentype");
+}
+
+/* line 6, ../../src/stylesheets/main.scss */
 body {
-  font-family: "Lora","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "walsheim", Helvetica, Arial, sans-serif;
   color: #3473a4;
   background-color: #f3f1e7;
 }
 
-/* line 23, ../../src/stylesheets/main.scss */
+/* line 19, ../../src/stylesheets/main.scss */
 h1,
 h2,
 h3,
@@ -7261,19 +7309,19 @@ h5,
 h6 {
   margin: 0 0 35px;
   text-transform: uppercase;
-  font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-weight: 700;
+  font-family: "dala-moa", "minion", Georgia, serif;
+  font-weight: bold;
   letter-spacing: 1px;
 }
 
-/* line 31, ../../src/stylesheets/main.scss */
+/* line 27, ../../src/stylesheets/main.scss */
 p {
   margin: 0 0 25px;
   font-size: 18px;
   line-height: 1.5;
 }
 @media (min-width: 768px) {
-  /* line 31, ../../src/stylesheets/main.scss */
+  /* line 27, ../../src/stylesheets/main.scss */
   p {
     margin: 0 0 35px;
     font-size: 20px;
@@ -7281,43 +7329,43 @@ p {
   }
 }
 
-/* line 42, ../../src/stylesheets/main.scss */
+/* line 38, ../../src/stylesheets/main.scss */
 a {
   color: #3473a4;
   -webkit-transition: all .2s ease-in-out;
   -moz-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 }
-/* line 48, ../../src/stylesheets/main.scss */
+/* line 44, ../../src/stylesheets/main.scss */
 a:hover, a:focus {
   text-decoration: none;
   color: #1b3d57;
 }
 
-/* line 54, ../../src/stylesheets/main.scss */
+/* line 50, ../../src/stylesheets/main.scss */
 .light {
   font-weight: 400;
 }
 
-/* line 58, ../../src/stylesheets/main.scss */
+/* line 54, ../../src/stylesheets/main.scss */
 .navbar-custom {
   visibility: hidden;
   margin-bottom: 0;
   text-transform: uppercase;
-  font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "walsheim", Helvetica, Arial, sans-serif;
 }
-/* line 63, ../../src/stylesheets/main.scss */
+/* line 59, ../../src/stylesheets/main.scss */
 .navbar-custom .navbar-toggle {
   line-height: calc(1.42857 * 14px);
   padding: 4px 6px;
   font-size: 16px;
   color: #3473a4;
 }
-/* line 69, ../../src/stylesheets/main.scss */
+/* line 65, ../../src/stylesheets/main.scss */
 .navbar-custom .navbar-toggle:focus, .navbar-custom .navbar-toggle:active {
   outline: none;
 }
-/* line 72, ../../src/stylesheets/main.scss */
+/* line 68, ../../src/stylesheets/main.scss */
 .navbar-custom .navbar-toggle:before {
   font-size: 3em;
   line-height: calc(1.42857 * 14px);
@@ -7326,64 +7374,64 @@ a:hover, a:focus {
   display: inline-block;
   width: 50px;
 }
-/* line 80, ../../src/stylesheets/main.scss */
+/* line 76, ../../src/stylesheets/main.scss */
 .navbar-custom .navbar-toggle:after {
   content: "MENU";
   line-height: calc(1.42857 * 14px);
   display: none;
   width: 50px;
 }
-/* line 87, ../../src/stylesheets/main.scss */
+/* line 83, ../../src/stylesheets/main.scss */
 .navbar-custom .navbar-toggle.collapsed:before {
   display: none;
 }
-/* line 90, ../../src/stylesheets/main.scss */
+/* line 86, ../../src/stylesheets/main.scss */
 .navbar-custom .navbar-toggle.collapsed:after {
   display: inline-block;
 }
-/* line 95, ../../src/stylesheets/main.scss */
+/* line 91, ../../src/stylesheets/main.scss */
 .navbar-custom .navbar-brand {
   font-weight: 700;
 }
-/* line 97, ../../src/stylesheets/main.scss */
+/* line 93, ../../src/stylesheets/main.scss */
 .navbar-custom .navbar-brand:focus {
   outline: none;
 }
-/* line 101, ../../src/stylesheets/main.scss */
+/* line 97, ../../src/stylesheets/main.scss */
 .navbar-custom a {
   color: #3473a4;
 }
-/* line 106, ../../src/stylesheets/main.scss */
+/* line 102, ../../src/stylesheets/main.scss */
 .navbar-custom .nav li a {
   -webkit-transition: background .3s ease-in-out;
   -moz-transition: background .3s ease-in-out;
   transition: background .3s ease-in-out;
 }
-/* line 110, ../../src/stylesheets/main.scss */
+/* line 106, ../../src/stylesheets/main.scss */
 .navbar-custom .nav li a:hover {
   color: rgba(255, 255, 255, 0.8);
   outline: none;
   background-color: transparent;
 }
-/* line 116, ../../src/stylesheets/main.scss */
+/* line 112, ../../src/stylesheets/main.scss */
 .navbar-custom .nav li a:focus, .navbar-custom .nav li a:active {
   outline: none;
   background-color: transparent;
 }
-/* line 121, ../../src/stylesheets/main.scss */
+/* line 117, ../../src/stylesheets/main.scss */
 .navbar-custom .nav li.active {
   outline: none;
 }
-/* line 123, ../../src/stylesheets/main.scss */
+/* line 119, ../../src/stylesheets/main.scss */
 .navbar-custom .nav li.active a {
   background-color: rgba(255, 255, 255, 0.3);
 }
-/* line 125, ../../src/stylesheets/main.scss */
+/* line 121, ../../src/stylesheets/main.scss */
 .navbar-custom .nav li.active a:hover {
   color: #3473a4;
 }
 @media (min-width: 768px) {
-  /* line 58, ../../src/stylesheets/main.scss */
+  /* line 54, ../../src/stylesheets/main.scss */
   .navbar-custom {
     padding: 20px 0;
     border-bottom: none;
@@ -7393,17 +7441,17 @@ a:hover, a:focus {
     -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
     transition: background .5s ease-in-out,padding .5s ease-in-out;
   }
-  /* line 140, ../../src/stylesheets/main.scss */
+  /* line 136, ../../src/stylesheets/main.scss */
   .navbar-custom.top-nav-collapse {
     padding: 0;
   }
 }
-/* line 146, ../../src/stylesheets/main.scss */
+/* line 142, ../../src/stylesheets/main.scss */
 .navbar-custom.sticky {
   visibility: visible;
 }
 
-/* line 151, ../../src/stylesheets/main.scss */
+/* line 147, ../../src/stylesheets/main.scss */
 .intro, #about {
   display: table;
   width: 100%;
@@ -7418,41 +7466,41 @@ a:hover, a:focus {
   background-size: cover;
   -o-background-size: cover;
 }
-/* line 164, ../../src/stylesheets/main.scss */
+/* line 160, ../../src/stylesheets/main.scss */
 .intro .intro-body, #about .intro-body {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 167, ../../src/stylesheets/main.scss */
+/* line 163, ../../src/stylesheets/main.scss */
 .intro .intro-body .brand-heading, #about .intro-body .brand-heading {
   font-size: 40px;
 }
-/* line 170, ../../src/stylesheets/main.scss */
+/* line 166, ../../src/stylesheets/main.scss */
 .intro .intro-body .intro-text, #about .intro-body .intro-text {
   font-size: 18px;
 }
 @media (min-width: 768px) {
-  /* line 151, ../../src/stylesheets/main.scss */
+  /* line 147, ../../src/stylesheets/main.scss */
   .intro, #about {
     height: 100%;
     padding: 0;
   }
-  /* line 178, ../../src/stylesheets/main.scss */
+  /* line 174, ../../src/stylesheets/main.scss */
   .intro .intro-body .brand-heading, #about .intro-body .brand-heading {
     font-size: 100px;
   }
-  /* line 181, ../../src/stylesheets/main.scss */
+  /* line 177, ../../src/stylesheets/main.scss */
   .intro .intro-body .intro-text, #about .intro-body .intro-text {
     font-size: 26px;
   }
 }
 
-/* line 187, ../../src/stylesheets/main.scss */
+/* line 183, ../../src/stylesheets/main.scss */
 .intro {
   position: absolute;
 }
 
-/* line 190, ../../src/stylesheets/main.scss */
+/* line 186, ../../src/stylesheets/main.scss */
 .fixed-wrap {
   position: absolute;
   left: 0;
@@ -7461,18 +7509,18 @@ a:hover, a:focus {
   top: 0;
 }
 
-/* line 198, ../../src/stylesheets/main.scss */
+/* line 194, ../../src/stylesheets/main.scss */
 .fixed-wrap.fix {
   position: fixed;
   margin-top: 0 !important;
 }
 
-/* line 202, ../../src/stylesheets/main.scss */
+/* line 198, ../../src/stylesheets/main.scss */
 #about {
   background: inherit;
 }
 
-/* line 206, ../../src/stylesheets/main.scss */
+/* line 202, ../../src/stylesheets/main.scss */
 .btn-circle {
   width: 70px;
   height: 70px;
@@ -7487,20 +7535,20 @@ a:hover, a:focus {
   -moz-transition: background .3s ease-in-out;
   transition: background .3s ease-in-out;
 }
-/* line 220, ../../src/stylesheets/main.scss */
+/* line 216, ../../src/stylesheets/main.scss */
 .btn-circle:hover, .btn-circle:focus {
   outline: none;
   color: #3473a4;
   background: rgba(255, 255, 255, 0.1);
 }
-/* line 225, ../../src/stylesheets/main.scss */
+/* line 221, ../../src/stylesheets/main.scss */
 .btn-circle i.animated {
   -webkit-transition-property: -webkit-transform;
   -webkit-transition-duration: 1s;
   -moz-transition-property: -moz-transform;
   -moz-transition-duration: 1s;
 }
-/* line 232, ../../src/stylesheets/main.scss */
+/* line 228, ../../src/stylesheets/main.scss */
 .btn-circle:hover i.animated {
   -webkit-animation-name: pulse;
   -moz-animation-name: pulse;
@@ -7513,19 +7561,19 @@ a:hover, a:focus {
 }
 
 @-webkit-keyframes pulse {
-  /* line 246, ../../src/stylesheets/main.scss */
+  /* line 242, ../../src/stylesheets/main.scss */
   from {
     -webkit-transform: scale(1);
     transform: scale(1);
   }
 
-  /* line 251, ../../src/stylesheets/main.scss */
+  /* line 247, ../../src/stylesheets/main.scss */
   50% {
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
   }
 
-  /* line 256, ../../src/stylesheets/main.scss */
+  /* line 252, ../../src/stylesheets/main.scss */
   100% {
     -webkit-transform: scale(1);
     transform: scale(1);
@@ -7533,31 +7581,31 @@ a:hover, a:focus {
 }
 
 @-moz-keyframes pulse {
-  /* line 263, ../../src/stylesheets/main.scss */
+  /* line 259, ../../src/stylesheets/main.scss */
   from {
     -moz-transform: scale(1);
     transform: scale(1);
   }
 
-  /* line 268, ../../src/stylesheets/main.scss */
+  /* line 264, ../../src/stylesheets/main.scss */
   50% {
     -moz-transform: scale(1.2);
     transform: scale(1.2);
   }
 
-  /* line 273, ../../src/stylesheets/main.scss */
+  /* line 269, ../../src/stylesheets/main.scss */
   100% {
     -moz-transform: scale(1);
     transform: scale(1);
   }
 }
 
-/* line 279, ../../src/stylesheets/main.scss */
+/* line 275, ../../src/stylesheets/main.scss */
 .content-section {
   padding-top: 100px;
 }
 
-/* line 283, ../../src/stylesheets/main.scss */
+/* line 279, ../../src/stylesheets/main.scss */
 .download-section {
   width: 100%;
   padding: 50px 0;
@@ -7570,7 +7618,7 @@ a:hover, a:focus {
   -o-background-size: cover;
 }
 
-/* line 295, ../../src/stylesheets/main.scss */
+/* line 291, ../../src/stylesheets/main.scss */
 #map {
   width: 100%;
   height: 200px;
@@ -7578,23 +7626,23 @@ a:hover, a:focus {
 }
 
 @media (min-width: 767px) {
-  /* line 302, ../../src/stylesheets/main.scss */
+  /* line 298, ../../src/stylesheets/main.scss */
   .content-section {
     padding-top: 250px;
   }
 
-  /* line 306, ../../src/stylesheets/main.scss */
+  /* line 302, ../../src/stylesheets/main.scss */
   .download-section {
     padding: 100px 0;
   }
 
-  /* line 310, ../../src/stylesheets/main.scss */
+  /* line 306, ../../src/stylesheets/main.scss */
   #map {
     height: 400px;
     margin-top: 250px;
   }
 }
-/* line 316, ../../src/stylesheets/main.scss */
+/* line 312, ../../src/stylesheets/main.scss */
 .btn {
   text-transform: uppercase;
   font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -7605,13 +7653,13 @@ a:hover, a:focus {
   border-radius: 0;
 }
 
-/* line 326, ../../src/stylesheets/main.scss */
+/* line 322, ../../src/stylesheets/main.scss */
 .btn-default {
   border: 1px solid #3473a4;
   color: #3473a4;
   background-color: transparent;
 }
-/* line 331, ../../src/stylesheets/main.scss */
+/* line 327, ../../src/stylesheets/main.scss */
 .btn-default:hover, .btn-default:focus {
   border: 1px solid #3473a4;
   outline: none;
@@ -7619,64 +7667,64 @@ a:hover, a:focus {
   background-color: #3473a4;
 }
 
-/* line 339, ../../src/stylesheets/main.scss */
+/* line 335, ../../src/stylesheets/main.scss */
 ul.banner-social-buttons {
   margin-top: 0;
 }
 @media (max-width: 1199px) {
-  /* line 339, ../../src/stylesheets/main.scss */
+  /* line 335, ../../src/stylesheets/main.scss */
   ul.banner-social-buttons {
     margin-top: 15px;
   }
 }
 @media (max-width: 767px) {
-  /* line 345, ../../src/stylesheets/main.scss */
+  /* line 341, ../../src/stylesheets/main.scss */
   ul.banner-social-buttons li {
     display: block;
     margin-bottom: 20px;
     padding: 0;
   }
-  /* line 349, ../../src/stylesheets/main.scss */
+  /* line 345, ../../src/stylesheets/main.scss */
   ul.banner-social-buttons li:last-child {
     margin-bottom: 0;
   }
 }
 
-/* line 356, ../../src/stylesheets/main.scss */
+/* line 352, ../../src/stylesheets/main.scss */
 footer {
   background: #f8a691;
   padding: 50px 0;
 }
-/* line 359, ../../src/stylesheets/main.scss */
+/* line 355, ../../src/stylesheets/main.scss */
 footer p {
   margin: 0;
 }
 
-/* line 364, ../../src/stylesheets/main.scss */
+/* line 360, ../../src/stylesheets/main.scss */
 ::-moz-selection {
   text-shadow: none;
   background: #fcfcfc;
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* line 370, ../../src/stylesheets/main.scss */
+/* line 366, ../../src/stylesheets/main.scss */
 ::selection {
   text-shadow: none;
   background: #fcfcfc;
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* line 376, ../../src/stylesheets/main.scss */
+/* line 372, ../../src/stylesheets/main.scss */
 img::selection {
   background: transparent;
 }
 
-/* line 380, ../../src/stylesheets/main.scss */
+/* line 376, ../../src/stylesheets/main.scss */
 img::-moz-selection {
   background: transparent;
 }
 
-/* line 384, ../../src/stylesheets/main.scss */
+/* line 380, ../../src/stylesheets/main.scss */
 body {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
 }
