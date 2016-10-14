@@ -4335,9 +4335,9 @@ tbody.collapse.in {
 /* line 33, ../../src/stylesheets/bootstrap/_component-animations.scss */
 .collapsing {
   width: 0;
-  -webkit-transition: width 0.35s ease;
-  -o-transition: width 0.35s ease;
-  transition: width 0.35s ease;
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
 }
 
 /* line 7, ../../src/stylesheets/bootstrap/_dropdowns.scss */
