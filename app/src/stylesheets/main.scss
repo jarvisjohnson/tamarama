@@ -53,6 +53,7 @@ a {
 
 .navbar-custom {
     visibility: hidden;
+    @include transition(visibility .3s ease-in);
     margin-bottom: 0;
     text-transform: uppercase;
     font-family: $font-family-sans-serif;
@@ -140,7 +141,7 @@ a {
         }
     }
     &.sticky{
-        visibility: visible
+        visibility: visible;
     }
 }
 
@@ -159,7 +160,7 @@ a {
     -o-background-size: cover;
     .intro-body {
         display: table-cell;
-        vertical-align: middle;
+        vertical-align: bottom;
         .brand-heading {
             font-size: 40px;
         }
@@ -197,6 +198,42 @@ a {
 }
 #about{
     background: inherit;
+}
+
+///Header Styles
+.intro-foot{
+    display: table-row;
+    .table-foot{
+        display:table-cell;
+        vertical-align: bottom;
+    }
+}
+
+//About
+#about{
+    .quote {
+        display: table-cell;
+        vertical-align: middle;
+        .brand-heading {
+            font-size: 40px;
+        }
+        .intro-text {
+            font-size: 18px;
+        }
+    }
+}
+
+//View Image Section
+.view-image{
+    width: 100%;
+    padding: 50px 0;
+    color: $primary;
+    background: url(../images/render-aerial.jpg) no-repeat center center scroll;
+    background-color: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
 
 .btn-circle {
