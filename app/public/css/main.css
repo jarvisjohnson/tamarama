@@ -7728,3 +7728,23 @@ img::-moz-selection {
 body {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
 }
+
+/* line 385, ../../src/stylesheets/main.scss */
+a[href^="http://maps.google.com/maps"] {
+  display: none !important;
+}
+
+/* line 386, ../../src/stylesheets/main.scss */
+a[href^="https://maps.google.com/maps"] {
+  display: none !important;
+}
+
+/* line 388, ../../src/stylesheets/main.scss */
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+  display: none;
+}
+
+/* line 391, ../../src/stylesheets/main.scss */
+.gmnoprint div {
+  background: none !important;
+}
