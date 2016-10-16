@@ -158,7 +158,6 @@ a {
     text-align: center;
     color: $primary;
     background: url(../images/intro-bg.jpg) no-repeat bottom center scroll;
-    background-color: black;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -244,7 +243,6 @@ header{
     padding: 200px 0;
     color: $primary;
     background: url(../images/render-aerial.jpg) no-repeat center center scroll;
-    background-color: black;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -265,7 +263,6 @@ header{
             background: url(../images/render-dawn.jpg) no-repeat center center scroll;
         }            
         .render{
-            background-color: black;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             background-size: cover;
@@ -278,8 +275,7 @@ header{
     color: $primary;
 }
 
-.property-features{
-    span.number{
+span.number{
         font-size: 14px;
         display: table-cell;
         text-align: center;
@@ -288,7 +284,6 @@ header{
         border-radius: 100%;
         width: 24px;
         height: 15px;
-    }
 }
 
 
@@ -299,7 +294,6 @@ header{
         padding: 200px 0;
         color: $primary;
         background: url(../images/rocks-sky.jpg) no-repeat center center scroll;
-        background-color: black;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         background-size: cover;
@@ -314,12 +308,16 @@ header{
         padding: 200px 0;
         color: $primary;
         background: url(../images/beach.jpg) no-repeat center center scroll;
-        background-color: black;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         background-size: cover;
         -o-background-size: cover;
     }
+}
+
+img{
+    max-width:100%;
+    height: auto;
 }
 
 
