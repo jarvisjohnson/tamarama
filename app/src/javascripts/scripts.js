@@ -7,6 +7,8 @@
 $('.renders').slick({
 });
 
+$("#contact form input").after("<span class='after'>|</span>").before("<span class='before'>|</span>");
+
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
     $('a.page-scroll').bind('click', function(event) {
