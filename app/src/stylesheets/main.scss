@@ -2,6 +2,8 @@
 @import "bootstrap";
 @import "compass/css3";
 @import "fonts";
+@import "slick";
+@import "slick-theme";
 
 body {
     // width: 100%;
@@ -60,6 +62,8 @@ a {
     .navbar-toggle {
         line-height: calc(1.42857 * 14px);
         padding: 4px 6px;
+        padding-right: 0;
+        text-align: right;
         font-size: 16px;
         color: $primary;
         &:focus,
@@ -86,6 +90,7 @@ a {
             }
             &:after{
                 display: inline-block;
+                vertical-align: sub;
             }    
         }
     }
@@ -188,7 +193,7 @@ a {
     position: absolute;
     left: 0;
     right: 0;
-    z-index: -1;
+    z-index: 1;
     top:0;    
 
 }
@@ -200,7 +205,16 @@ a {
     background: inherit;
 }
 
+// general
+.content-section {
+    padding-top: 50px;
+}
+
 ///Header Styles
+
+header{
+    z-index: 2;
+}
 .intro-foot{
     display: table-row;
     .table-foot{
@@ -225,8 +239,9 @@ a {
 
 //View Image Section
 .view-image{
+    .image-section{
     width: 100%;
-    padding: 50px 0;
+    padding: 200px 0;
     color: $primary;
     background: url(../images/render-aerial.jpg) no-repeat center center scroll;
     background-color: black;
@@ -234,7 +249,79 @@ a {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    }
 }
+
+//Property Features Section
+#floor-plans{
+    .renders{
+        .render-road{
+            background: url(../images/render-road.jpg) no-repeat center center scroll;
+        }    
+        .render-living{
+            background: url(../images/render-living.jpg) no-repeat center center scroll;
+        }            
+        .render-dawn{
+            background: url(../images/render-dawn.jpg) no-repeat center center scroll;
+        }            
+        .render{
+            background-color: black;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover; 
+        }        
+    }
+}
+
+.slick-prev:before, .slick-next:before {
+    color: $primary;
+}
+
+.property-features{
+    span.number{
+        font-size: 14px;
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid $primary;
+        border-radius: 100%;
+        width: 24px;
+        height: 15px;
+    }
+}
+
+
+//Rock Image Section
+.rock-image{
+    .image-section{
+        width: 100%;
+        padding: 200px 0;
+        color: $primary;
+        background: url(../images/rocks-sky.jpg) no-repeat center center scroll;
+        background-color: black;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+    }
+}
+
+//Beach Image Section
+.beach-image{
+    .image-section{
+        width: 100%;
+        padding: 200px 0;
+        color: $primary;
+        background: url(../images/beach.jpg) no-repeat center center scroll;
+        background-color: black;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+    }
+}
+
 
 .btn-circle {
     width: 70px;
@@ -309,21 +396,7 @@ a {
     }
 }
 
-.content-section {
-    padding-top: 100px;
-}
 
-.download-section {
-    width: 100%;
-    padding: 50px 0;
-    color: $primary;
-    background: url(../images/downloads-bg.jpg) no-repeat center center scroll;
-    background-color: black;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
 
 #map {
     width: 100%;
@@ -333,7 +406,7 @@ a {
 
 @media(min-width:767px) {
     .content-section {
-        padding-top: 250px;
+        padding-top: 100px;
     }
 
     .download-section {

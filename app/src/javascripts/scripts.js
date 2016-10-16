@@ -4,17 +4,8 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-// jQuery to collapse the navbar on scroll
-//function collapseNavbar() {
-    // if ($(".navbar").offset().top > 50) {
-    //     $(".navbar-fixed-top").addClass("top-nav-collapse");
-    // } else {
-    //     $(".navbar-fixed-top").removeClass("top-nav-collapse");
-    // }
-//}
-
-//$(window).scroll(collapseNavbar);
-//$(document).ready(collapseNavbar);
+$('.renders').slick({
+});
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
@@ -56,6 +47,9 @@ $(document).ready(function(){
 
     // Find the value of 90% of the viewport height
     var ninetypercent = .9 * windowHeight;
+    var eightypercent = .8 * windowHeight;
+
+    $('#floor-plans .renders .render').height(eightypercent);
     
     // When the document is scrolled ninety percent, toggle the classes
     // Does not work in iOS 7 or below
