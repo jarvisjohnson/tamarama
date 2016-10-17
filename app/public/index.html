@@ -7,6 +7,8 @@
     <meta name="description" content="">
     <meta name="author" content="Built in Code.  Check out >> builtincode.com">
 	<title>Twenty One Thompson</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <!-- Custom Fonts -->
     <link href="css/ionicons.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
@@ -21,9 +23,12 @@
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand page-scroll serif text-center" href="#page-top">
+                <a class="navbar-brand page-scroll serif text-center no-mob" href="#page-top">
                     TWENTY ONE<br>THOMPSON
                 </a>
+                <a class="navbar-brand page-scroll serif text-center mob-only" href="#page-top">
+                    21
+                </a>                
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -61,7 +66,7 @@
     <nav class="navbar navbar-custom navbar-fixed-bottom" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand text-capitalize text-center" href="http://wallacecunningham.com/" target="_blank">
+                <a class="navbar-brand text-capitalize text-center no-mob" href="http://wallacecunningham.com/" target="_blank">
                     Residence <span class="text-lowercase">by</span><br>Wallace E. Cunningham
                 </a>
             </div>
@@ -85,14 +90,15 @@
 
     <!-- Intro Header -->
     <header class="intro">
+        <video loop muted autoplay poster="images/header-still-sm.jpg" class="fullscreen-bg__video">
+            <source src="images/header-sm.mp4" type="video/mp4">
+            <source src="images/header-sm.webm" type="video/webm">
+        </video>
         <div class="intro-body">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">TWENTY ONE<br>THOMPSON</h1>
-<!--                         <a href="#about" class="btn btn-circle page-scroll">
-                            <i class="fa fa-angle-double-down animated"></i>
-                        </a> -->
                     </div>
                 </div>
                 <div class="row">
@@ -118,7 +124,7 @@
 
 <div class="fixed-wrap">
     <!-- About Section -->
-    <section id="about" class="container content-section text-center">
+    <section id="about" class="content-section text-center">
         <div class="quote">
             <div class="container">    
                 <div class="row">
@@ -176,7 +182,7 @@
                       <div class="render render-dawn col-lg-8 col-lg-offset-2"></div>
                   </div>
                 </div>
-                <div class="row text-right">
+                <div class="row text-right mob-pad">
                     <div class="container">
                     <div class="col-lg-12">
                         <a class="download">
@@ -313,7 +319,7 @@
     </section>           
 
     <!-- Contact Section -->
-    <section id="neighbourhood" class="container content-section text-center">
+    <section id="neighbourhood" class="content-section text-center">
              <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
                     <h5 class="sans">Neighbourhood</h5>
@@ -371,7 +377,7 @@
                         <figcaption>Orchard St.</figcaption>
                     </figure>
                 </div>
-                <div class="col-lg-7 text-left">
+                <div class="col-lg-7 text-left mob-pad">
                     <div class="row">
                        <div class="col-lg-7">
                         <p class="numbered-item">
@@ -402,7 +408,7 @@
                     </div>
                 </div>                                                   
         </div>            
-        <div class="container higher">
+        <div class="container higher mob-pad">
             <div class="col-lg-offset-2 col-lg-10 text-left">
                 <p class="numbered-item">
                     <span class="number larger">
@@ -443,7 +449,7 @@
     </section>
 
     <!-- Map Section -->
-    <div id="map"></div>
+    <div id="map" class="mob-pad"></div>
 
     <!-- Footer -->
     <footer id="contact">
@@ -456,7 +462,7 @@
                 For more information
                 </h7>                
                 <hr>
-                <form method="POST" action="http://formspree.io/YOUREMAILHERE">
+                <form method="POST" action="http://formspree.io/jarvis@swish.online">
                     <div class="rows">
                       <input type="name" name="first" placeholder="First Name">
                     </div>

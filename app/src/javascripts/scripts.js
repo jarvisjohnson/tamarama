@@ -33,28 +33,43 @@ function getDocHeight() {
         D.body.clientHeight, D.documentElement.clientHeight
     );
 }
+var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
+
+ 
+      
+
+
 
 $(document).ready(function(){
+
+    var windowHeight = $(window).height();
   
   // Even when the window is resized, run this code.
-  $(window).resize(function(){
+  // $(window).resize(function(){
     
     // Variables
-    var windowHeight = $(window).height();
-    var fixedHeight = $('.fixed-wrap').height();
 
-    console.log(windowHeight);
+    var fixedHeight = $('.fixed-wrap').height();
+    if(isMobile) {
+    $('.fixed-wrap').css('margin-top' , windowHeight);
+    }else{};
+
+//    console.log(windowHeight);
 
     $('.intro, #about').height(windowHeight);
-    $( '.intro' ).css('margin-bottom' , fixedHeight);
+    //$( '.intro' ).css('margin-bottom' , fixedHeight);
     $('body').css('height' , getDocHeight());
 
     // Find the value of 90% of the viewport height
     var ninetypercent = .9 * windowHeight;
-    var eightypercent = .78 * windowHeight;
+    var eightypercent = .65 * windowHeight;
+    var fortypercent = .40 * windowHeight;
 
-    $('#floor-plans .renders .render, .image-section').height(eightypercent);
-    
+    if(isMobile) {
+    $('#floor-plans .renders .render, .image-section').height(fortypercent);      
+    }else{
+    $('#floor-plans .renders .render, .image-section').height(eightypercent);      
+    }
     // When the document is scrolled ninety percent, toggle the classes
     // Does not work in iOS 7 or below
     // Hasn't been tested in iOS 8
@@ -73,23 +88,24 @@ $(document).ready(function(){
         // Else remove it.
         $('nav').removeClass('sticky');
       };
+     if(!isMobile) {
+        // If the document is scrolled 100%
+        if( y < windowHeight ) {
+          
+          // Add the "sticky" class
+          $('.fixed-wrap').addClass('fix');
+        } else {
+          // Else remove it.
+          $('.fixed-wrap').removeClass('fix').css('margin-top' , windowHeight);
+          $('body').css('height' , getDocHeight());
 
-      // If the document is scrolled 100%
-      if( y < windowHeight ) {
-        
-        // Add the "sticky" class
-        $('.fixed-wrap').addClass('fix');
-      } else {
-        // Else remove it.
-        $('.fixed-wrap').removeClass('fix').css('margin-top' , windowHeight);
-        $('body').css('height' , getDocHeight());
-
-      }
+        };
+      } 
 
     });
 
   // Call it on resize.
-  }).resize();
+  // }).resize();
   
 }); // jQuery
 

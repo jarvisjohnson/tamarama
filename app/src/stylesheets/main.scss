@@ -11,8 +11,14 @@ body {
     font-family: $font-family-sans-serif;
     color: $primary;
     background-color: $bg;
+    // -webkit-overflow-scrolling: auto;
 }
-
+// html,
+// body {
+//   height: 100%;
+//   width: 100%;
+//   overflow: auto;
+// }
 h1,
 h2,
 h3,
@@ -84,8 +90,13 @@ body{
     @media(min-width:768px) {
         font-size: 18px;   
     } 
+   
 }
-
+.mob-pad{
+    @media(max-width:768px) {
+      margin-top: 30px;
+    } 
+}
 quote{
     font-size: 24px;
     font-family: $font-family-serif;
@@ -94,6 +105,7 @@ quote{
     padding: 0 0 25px;
         @media(min-width:768px) {
         padding: 0 0 35px;
+        font-size: 26px;
     }
 }
 a {
@@ -224,12 +236,14 @@ section{
         visibility: visible;
     }
 }
+
 .navbar-fixed-bottom .navbar-right li a{
         padding-top: 25px;
     }
 .navbar-fixed-bottom *{
     font-size: 16px;
 }
+
 
 .intro, #about {
     display: table;
@@ -244,18 +258,18 @@ section{
     background-size: cover;
     -o-background-size: cover;
     .intro-body {
-        display: table-cell;
+        display: table-row;
         vertical-align: bottom;
         .brand-heading {
-            font-size: 40px;
+            font-size: 42px;
             letter-spacing: 10px;
         }
         .intro-text {
             font-size: 18px;
         }
         h4{
-            font-weight: 300;
-            font-size: 26px;
+            //font-weight: 300;
+            font-size: 28px;
             letter-spacing: 5px;
         }
     }
@@ -274,7 +288,59 @@ section{
 }
 .intro{
     position: absolute;
+    overflow: hidden;
+    .fullscreen-bg__video{
+        position: absolute;
+        top: -4px;
+        left: 0;
+        width: auto;
+        height: 102%;
+    }
 }
+/// Disable on Mobile
+@media(max-width:768px) {
+    .intro .intro-body .container{
+            display: table-cell;
+        vertical-align: bottom;
+    }
+    .mob-only{
+        display:block;
+    }
+    .no-mob{
+        display: none;
+    }
+}
+/// Disable on Mobile
+@media(min-width:769px) {
+    .intro .intro-body .container{
+            display: table-cell;
+        vertical-align: bottom;
+    }
+    .mob-only{
+        display:none;
+    }
+    .no-mob{
+        display: block;
+    }
+}
+.fullscreen-bg__video{
+    @media(max-width:768px) {
+      display:none;
+    }     
+}
+// @media (min-aspect-ratio: 16/9) {
+//   .fullscreen-bg__video {
+//     width: 100%;
+//     height: auto;
+//   }
+// }
+
+// @media (max-aspect-ratio: 16/9) {
+//   .fullscreen-bg__video {
+
+//   }
+// }
+
 .fixed-wrap{
     position: absolute;
     left: 0;
@@ -627,6 +693,7 @@ body {
 }
 
 footer{
+    overflow: hidden;
     hr{
         width: 7%;
         margin-left: 0;
