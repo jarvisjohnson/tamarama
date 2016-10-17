@@ -43,15 +43,17 @@ $(document).ready(function(){
     var windowHeight = $(window).height();
     var fixedHeight = $('.fixed-wrap').height();
 
+    console.log(windowHeight);
+
     $('.intro, #about').height(windowHeight);
     $( '.intro' ).css('margin-bottom' , fixedHeight);
     $('body').css('height' , getDocHeight());
 
     // Find the value of 90% of the viewport height
     var ninetypercent = .9 * windowHeight;
-    var eightypercent = .8 * windowHeight;
+    var eightypercent = .78 * windowHeight;
 
-    $('#floor-plans .renders .render').height(eightypercent);
+    $('#floor-plans .renders .render, .image-section').height(eightypercent);
     
     // When the document is scrolled ninety percent, toggle the classes
     // Does not work in iOS 7 or below

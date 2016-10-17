@@ -20,36 +20,91 @@ h4,
 h5,
 h6 {
     margin: 0 0 35px;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     font-family: $font-family-serif;
-    font-weight: bold;
+    font-weight: 500;
     letter-spacing: 1px;
+}
+h1,h3{
+    font-weight: 700;
+    line-height: 1.2em;    
+}
+h5{
+    font-size: 22px;
+}
+h6{
+    font-size: 24px;
+}
+h7{
+    font-size: 20px;
+}
+.sans{
+    font-family: $font-family-sans-serif;
+}
+.serif{
+    font-family: $font-family-serif;
+}
+.heavy{
+    font-weight: 700;
+}
+.light{
+    font-weight: 300;
+}
+.up{
+    text-transform: uppercase;
 }
 hr{
     color: $primary;
     border-color: $primary;
 }
-
+figcaption{
+    font-size: 15px;
+    font-weight: 300;
+}
 p {
     margin: 0 0 25px;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.5;
+    font-weight: 300;
     @media(min-width:768px) {
         margin: 0 0 35px;
-        font-size: 20px;
+        font-size: 18px;
         line-height: 1.6;
     }
 }
+p a, address a{
+    text-decoration: underline;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+body{
+    font-size: 16px;
+    font-weight: 300;
+    @media(min-width:768px) {
+        font-size: 18px;   
+    } 
+}
 
+quote{
+    font-size: 24px;
+    font-family: $font-family-serif;
+    font-weight: normal;
+    letter-spacing: 1px; 
+    padding: 0 0 25px;
+        @media(min-width:768px) {
+        padding: 0 0 35px;
+    }
+}
 a {
     color: $primary;
-    -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
+    // -webkit-transition: all .3s ease-in;
+    // -moz-transition: all .3s ease-in;
+    // transition: all .3s ease-in;
     &:hover,
     &:focus {
         text-decoration: none;
-        color: darken($primary,20%);
+        color: lighten($primary,10%);
     }
 }
 
@@ -65,7 +120,7 @@ section{
     visibility: hidden;
     @include transition(visibility .3s ease-in);
     margin-bottom: 0;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     font-family: $font-family-sans-serif;
     .navbar-toggle {
         line-height: calc(1.42857 * 14px);
@@ -98,12 +153,12 @@ section{
             }
             &:after{
                 display: inline-block;
-                vertical-align: sub;
+                // vertical-align: sub;
             }    
         }
     }
     .navbar-brand {
-        font-weight: 700;
+        font-weight: 500;
         &:focus {
             outline: none;
         }
@@ -118,7 +173,7 @@ section{
                 -moz-transition: background .3s ease-in-out;
                 transition: background .3s ease-in-out;
                 &:hover {
-                    color: rgba(white, 0.8);
+                    color: lighten($primary,10%);
                     outline: none;
                     background-color: transparent;
                 }
@@ -131,9 +186,21 @@ section{
             &.active {
                 outline: none;
                 a {
-                    background-color: rgba(white, 0.3);
+                position: relative;                    
+                    &:after{
+                        width: calc(100% - 30px);
+                        position: absolute;
+                        bottom: 5px;
+                        left: 15px;
+                        right: 15px;
+                        border-bottom: 1px solid $primary;
+                        content:' ';
+                    }
+                    // background-color: rgba(white, 0.5);
+                    // text-decoration: underline;
                     &:hover {
-                        color: $primary;
+                        color: lighten($primary,10%);
+                        // text-decoration: underline;
                     }
                 }
             }
@@ -157,12 +224,18 @@ section{
         visibility: visible;
     }
 }
+.navbar-fixed-bottom .navbar-right li a{
+        padding-top: 25px;
+    }
+.navbar-fixed-bottom *{
+    font-size: 16px;
+}
 
 .intro, #about {
     display: table;
     width: 100%;
     height: auto;
-    padding: 100px 0;
+    // padding: 100px 0;
     text-align: center;
     color: $primary;
     background: url(../images/intro-bg.jpg) no-repeat bottom center scroll;
@@ -175,9 +248,15 @@ section{
         vertical-align: bottom;
         .brand-heading {
             font-size: 40px;
+            letter-spacing: 10px;
         }
         .intro-text {
             font-size: 18px;
+        }
+        h4{
+            font-weight: 300;
+            font-size: 26px;
+            letter-spacing: 5px;
         }
     }
     @media(min-width:768px) {
@@ -244,11 +323,18 @@ header{
     }
 }
 
+.wallace{
+    margin-top: 30px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
 //View Image Section
 .view-image{
     .image-section{
     width: 100%;
-    padding: 200px 0;
+    min-height: 200px;
+    // padding: 200px 0;
     color: $primary;
     background: url(../images/render-aerial.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
@@ -271,6 +357,7 @@ header{
             background: url(../images/render-dawn.jpg) no-repeat center center scroll;
         }            
         .render{
+            min-height: 200px;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             background-size: cover;
@@ -284,14 +371,23 @@ header{
 }
 
 span.number{
-        font-size: 14px;
-        display: table-cell;
-        text-align: center;
-        vertical-align: middle;
-        border: 1px solid $primary;
-        border-radius: 100%;
-        width: 24px;
-        height: 15px;
+    font-size: 14px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #3473a4;
+    border-radius: 100%;
+    width: 18px;
+    height: 18px;
+    /* margin-bottom: -12px; */
+    line-height: 13px;
+    font-family: dala-moa;
+    &.larger{
+        font-size: 20px;
+        width: 22px;
+        height: 22px;
+        line-height: 14px;
+    }
 }
 
 
@@ -299,7 +395,6 @@ span.number{
 .rock-image{
     .image-section{
         width: 100%;
-        padding: 200px 0;
         color: $primary;
         background: url(../images/rocks-sky.jpg) no-repeat center center scroll;
         -webkit-background-size: cover;
@@ -313,7 +408,6 @@ span.number{
 .beach-image{
     .image-section{
         width: 100%;
-        padding: 200px 0;
         color: $primary;
         background: url(../images/beach.jpg) no-repeat center center scroll;
         -webkit-background-size: cover;
@@ -328,7 +422,15 @@ img{
     height: auto;
 }
 
-
+@media(min-width:768px) {
+    .orchard-st{
+        margin-top: 200px;
+    }
+    .container.higher{
+        position: relative;
+        top: -40px;
+    }
+}
 .btn-circle {
     width: 70px;
     height: 70px;
@@ -407,7 +509,6 @@ img{
 #map {
     width: 100%;
     height: 200px;
-    margin-top: 100px;
 }
 
 @media(min-width:767px) {
@@ -421,7 +522,6 @@ img{
 
     #map {
         height: 400px;
-        margin-top: 250px;
     }
 }
 
@@ -528,11 +628,12 @@ body {
 
 footer{
     hr{
-        width: 10%;
+        width: 7%;
         margin-left: 0;
     }
     figure{
         width: 50%;
+        margin-bottom: 20px;
     }
 }
 
@@ -565,16 +666,39 @@ form{
         position: absolute;        
         bottom: 0px;
         height: 8px;
-        overflow: hidden;        
+        overflow: hidden;
+        width: 2px;        
     }
     .before{
         left: -1px;
     }
     .after{
-        right: -1px;
+        right: 0px;
     }
 }
 
+
+///Custom Media Queries
+@media(max-width:767px) {
+    .navbar-header, .navbar-right, ul.navbar-nav, button.navbar-toggle{
+        display: table-cell;
+    }
+    .navbar-header{
+        float:left;
+    }
+    .navbar-right{
+        float:right;
+        max-height: 100px;
+    }
+    .navbar{
+        min-height: 75px;
+    }
+
+    .navbar-fixed-top{
+        max-height: 90px;
+    overflow-y: visible; 
+    }   
+}
 
 //Maps 
 a[href^="http://maps.google.com/maps"]{display:none !important}
