@@ -62,7 +62,7 @@ $(document).ready(function(){
 
     // Find the value of 90% of the viewport height
     var ninetypercent = .9 * windowHeight;
-    var eightypercent = .65 * windowHeight;
+    var eightypercent = .80 * windowHeight;
     var fortypercent = .40 * windowHeight;
 
     if(isMobile) {

@@ -19,7 +19,7 @@ p {
     line-height: 1.5;
     font-weight: 300;
     @media(min-width:768px) {
-        margin: 0 0 20px;
+        margin: 0 0 25px;
         font-size: 16.5px;
         line-height: 1.4;
         letter-spacing: 0px;
@@ -106,7 +106,7 @@ hr{
     border-color: $primary;
 }
 figcaption{
-    font-size: 13px;
+    font-size: 14px;
     line-height: 2.2em;
     font-weight: 500;
 }
@@ -154,7 +154,10 @@ section{
 .light {
     font-weight: 400;
 }
-
+.title-header{ 
+   margin-top: 70px;
+    margin-bottom: 20px;
+}
 .navbar-custom {
     visibility: hidden;
     @include transition(visibility .3s ease-in);
@@ -422,18 +425,11 @@ header{
     letter-spacing: 2px;
 }
 
-//View Image Section
-.view-image{
+
+//Overview Section
+#overview{
     .image-section{
-    width: 100%;
-    min-height: 200px;
-    // padding: 200px 0;
-    color: $primary;
-    background: url(../images/render-aerial.jpg) no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+    background-image: url(../images/render-aerial.jpg);
     }
 }
 
@@ -487,29 +483,24 @@ span.number{
 //Rock Image Section
 #architecture{
     .image-section{
-        width: 100%;
-        color: $primary;
-        background: url(../images/rocks-sky.jpg) no-repeat center center scroll;
-        background-attachment: fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        background-size: cover;
-        -o-background-size: cover;
+        background-image: url(../images/rocks-sky.jpg);
     }
 }
 
 //Beach Image Section
 #neighbourhood{
     .image-section{
-        width: 100%;
-        color: $primary;
-        background: url(../images/beach.jpg) no-repeat center center scroll;
-        background-attachment: fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        background-size: cover;
-        -o-background-size: cover;
+        background-image: url(../images/beach.jpg);
     }
+}
+
+
+.image-section{
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% auto;
+    min-height: 600px;
 }
 
 img{
