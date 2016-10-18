@@ -123,6 +123,6 @@ module.exports = function(grunt) {
     // Default task(s).
     grunt.registerTask('default', ['connect:livereload', 'compass:dev', 'uglify', 'watch']);
     // prod build
-    grunt.registerTask('prod', [ 'clean', 'uglify', 'compass:prod']);
+    grunt.registerTask('prod', [ 'uglify', 'compass:prod']);
 
 };

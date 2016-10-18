@@ -13,12 +13,30 @@ body {
     background-color: $bg;
     // -webkit-overflow-scrolling: auto;
 }
-// html,
-// body {
-//   height: 100%;
-//   width: 100%;
-//   overflow: auto;
-// }
+p {
+    margin: 0 0 25px;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 300;
+    @media(min-width:768px) {
+        margin: 0 0 20px;
+        font-size: 16.5px;
+        line-height: 1.4;
+        letter-spacing: 0px;
+    }
+}
+p a, address a{
+    text-decoration: underline;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+footer p, footer input, footer address{
+    font-size: 16px;
+}
+p.numbered-item{
+    margin-bottom: 10px;}
+
 h1,
 h2,
 h3,
@@ -35,11 +53,26 @@ h1,h3{
     font-weight: 700;
     line-height: 1.2em;    
 }
+h4{
+    font-size: 36px;
+}
+.prop{
+    font-size: 42px;
+    letter-spacing: 3px;
+}
 h5{
     font-size: 22px;
 }
 h6{
     font-size: 24px;
+}
+@media(min-width:768px) {
+h2{ font-size: 40px;}
+h3{font-size: 32px;}
+}
+@media(min-width:1000px) {
+h2{ font-size: 48px;}
+h3{font-size: 38px;}
 }
 h7{
     font-size: 20px;
@@ -56,6 +89,15 @@ h7{
 .light{
     font-weight: 300;
 }
+span.serif.heavy{
+    font-size:1.3em;
+    line-height: 2.2;    
+}
+span.tighter{
+    // @media(min-width:768px) {    
+    letter-spacing: -.5px;   
+    // } 
+}
 .up{
     text-transform: uppercase;
 }
@@ -64,26 +106,11 @@ hr{
     border-color: $primary;
 }
 figcaption{
-    font-size: 15px;
-    font-weight: 300;
+    font-size: 13px;
+    line-height: 2.2em;
+    font-weight: 500;
 }
-p {
-    margin: 0 0 25px;
-    font-size: 16px;
-    line-height: 1.5;
-    font-weight: 300;
-    @media(min-width:768px) {
-        margin: 0 0 35px;
-        font-size: 18px;
-        line-height: 1.6;
-    }
-}
-p a, address a{
-    text-decoration: underline;
-    &:hover{
-        text-decoration: underline;
-    }
-}
+
 body{
     font-size: 16px;
     font-weight: 300;
@@ -258,20 +285,23 @@ section{
     background-size: cover;
     -o-background-size: cover;
     .intro-body {
-        display: table-row;
-        vertical-align: bottom;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
         .brand-heading {
             font-size: 42px;
             letter-spacing: 10px;
-        }
-        .intro-text {
-            font-size: 18px;
         }
         h4{
             //font-weight: 300;
             font-size: 28px;
             letter-spacing: 5px;
         }
+    }
+    .intro-foot{
+        .intro-text{font-size: 18px;
+            font-weight: 500;}
     }
     @media(min-width:768px) {
         height: 100%;
@@ -284,25 +314,26 @@ section{
                 font-size: 26px;
             }
         }
-    }
+        .intro-foot{
+            .intro-text{ font-size: 24px;}
+            }        
+        }
 }
 .intro{
     position: absolute;
     overflow: hidden;
     .fullscreen-bg__video{
-        position: absolute;
-        top: -4px;
-        left: 0;
+        position:absolute;
+        right: 0%;
+        bottom: 0%;
+        min-width: 102%;
+        min-height: 102%;
         width: auto;
-        height: 102%;
+        height: auto;
     }
 }
 /// Disable on Mobile
 @media(max-width:768px) {
-    .intro .intro-body .container{
-            display: table-cell;
-        vertical-align: bottom;
-    }
     .mob-only{
         display:block;
     }
@@ -312,10 +343,6 @@ section{
 }
 /// Disable on Mobile
 @media(min-width:769px) {
-    .intro .intro-body .container{
-            display: table-cell;
-        vertical-align: bottom;
-    }
     .mob-only{
         display:none;
     }
@@ -449,20 +476,21 @@ span.number{
     line-height: 13px;
     font-family: dala-moa;
     &.larger{
-        font-size: 20px;
-        width: 22px;
-        height: 22px;
+        font-size: 27px;
+        width: 21px;
+        height: 21px;
         line-height: 14px;
     }
 }
 
 
 //Rock Image Section
-.rock-image{
+#architecture{
     .image-section{
         width: 100%;
         color: $primary;
         background: url(../images/rocks-sky.jpg) no-repeat center center scroll;
+        background-attachment: fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         background-size: cover;
@@ -471,11 +499,12 @@ span.number{
 }
 
 //Beach Image Section
-.beach-image{
+#neighbourhood{
     .image-section{
         width: 100%;
         color: $primary;
         background: url(../images/beach.jpg) no-repeat center center scroll;
+        background-attachment: fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         background-size: cover;
@@ -492,9 +521,12 @@ img{
     .orchard-st{
         margin-top: 200px;
     }
-    .container.higher{
+    .higher{
         position: relative;
         top: -40px;
+    }
+    .even-higher{
+        top: -80px;
     }
 }
 .btn-circle {
@@ -580,6 +612,7 @@ img{
 @media(min-width:767px) {
     .content-section {
         padding-top: 100px;
+        padding-bottom: 100px;
     }
 
     .download-section {
