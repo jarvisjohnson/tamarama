@@ -6,23 +6,25 @@
 @import "slick-theme";
 
 body {
-    // width: 100%;
-    // height: 100%;
     font-family: $font-family-sans-serif;
     color: $primary;
     background-color: $bg;
-    // -webkit-overflow-scrolling: auto;
+    font-size: 20px;
+    font-weight: 500;
+    @media(min-width:768px) {
+        font-size: 23px;   
+    } 
 }
 p {
     margin: 0 0 25px;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.5;
     font-weight: 300;
     @media(min-width:768px) {
         margin: 0 0 25px;
-        font-size: 16.5px;
-        line-height: 1.4;
-        letter-spacing: 0px;
+        font-size: 21px;
+        line-height: 1.3em;
+        letter-spacing: .2px;
     }
 }
 p a, address a{
@@ -31,10 +33,10 @@ p a, address a{
         text-decoration: underline;
     }
 }
-footer p, footer input, footer address{
-    font-size: 16px;
+footer p, footer input, footer address, footer button{
+    font-size: 15px;
 }
-p.numbered-item{
+.numbered-item{
     margin-bottom: 10px;}
 
 h1,
@@ -43,18 +45,21 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0 0 35px;
+    margin: 0 0 25px;
     // text-transform: uppercase;
     font-family: $font-family-serif;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 0px;
 }
 h1,h3{
     font-weight: 700;
     line-height: 1.2em;    
 }
+h3{
+    letter-spacing: 3px;
+}
 h4{
-    font-size: 36px;
+    font-size: 37px;
 }
 .prop{
     font-size: 42px;
@@ -62,17 +67,20 @@ h4{
 }
 h5{
     font-size: 22px;
+    margin-bottom: 10px;
+    font-size: 26px;
 }
 h6{
     font-size: 24px;
+    margin: 0 0 15px;
 }
 @media(min-width:768px) {
 h2{ font-size: 40px;}
-h3{font-size: 32px;}
+h3{font-size: 34px;}
 }
 @media(min-width:1000px) {
 h2{ font-size: 48px;}
-h3{font-size: 38px;}
+h3{font-size: 43px;}
 }
 h7{
     font-size: 20px;
@@ -86,6 +94,9 @@ h7{
 .heavy{
     font-weight: 700;
 }
+.normal{
+    font-weight: 500;
+}
 .light{
     font-weight: 300;
 }
@@ -98,6 +109,10 @@ span.tighter{
     letter-spacing: -.5px;   
     // } 
 }
+hr{
+        margin-top: 8px;
+    margin-bottom: 8px;
+}
 .up{
     text-transform: uppercase;
 }
@@ -106,19 +121,11 @@ hr{
     border-color: $primary;
 }
 figcaption{
-    font-size: 14px;
+    font-size: 17px;
     line-height: 2.2em;
     font-weight: 500;
 }
 
-body{
-    font-size: 16px;
-    font-weight: 300;
-    @media(min-width:768px) {
-        font-size: 18px;   
-    } 
-   
-}
 .mob-pad{
     @media(max-width:768px) {
       margin-top: 30px;
@@ -134,6 +141,14 @@ quote{
         padding: 0 0 35px;
         font-size: 26px;
     }
+}
+quote.text-left{
+    padding-right: 30px;
+}
+p.quote{
+    padding-right: 100px;
+    font-size: 35px;
+    line-height: 1.1;
 }
 a {
     color: $primary;
@@ -156,7 +171,13 @@ section{
 }
 .title-header{ 
    margin-top: 70px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+}
+.sub-title{
+    margin-bottom: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+   margin-top: -15px; 
 }
 .navbar-custom {
     visibility: hidden;
@@ -168,8 +189,9 @@ section{
         line-height: calc(1.42857 * 14px);
         padding: 4px 6px;
         padding-right: 0;
-        text-align: right;
-        font-size: 16px;
+        font-size: .9em;
+        font-weight: 700;
+        letter-spacing: 4px;
         color: $primary;
         &:focus,
         &:active {
@@ -181,13 +203,16 @@ section{
             vertical-align: middle;  
             transition: all .2s ease;
             display: inline-block;
-            width: 50px          
+            width: 75px;
+            width:30px          
         }
         &:after{
             content: "MENU";
             line-height: calc(1.42857 * 14px);
             display: none;
-            width: 50px             
+            width: 75px;
+            height: 30px;
+            vertical-align: sub;            
         }
         &.collapsed{
             &:before {
@@ -204,9 +229,6 @@ section{
         &:focus {
             outline: none;
         }
-    }
-    a {
-        color: $primary;
     }
     .nav {
         li {
@@ -267,13 +289,22 @@ section{
     }
 }
 
+.navbar-fixed-top .navbar-brand{
+        font-weight: 700;
+    letter-spacing: 3px;
+}
+
 .navbar-fixed-bottom .navbar-right li a{
         padding-top: 25px;
     }
 .navbar-fixed-bottom *{
     font-size: 16px;
 }
-
+#contacter{
+ padding-right: 0!important;
+font-weight: 700;
+    padding-bottom: 0;
+}
 
 .intro, #about {
     display: table;
@@ -311,7 +342,7 @@ section{
         padding: 0;
         .intro-body {
             .brand-heading {
-                font-size: 100px;
+                font-size: 700%;
             }
             .intro-text {
                 font-size: 26px;
@@ -387,11 +418,6 @@ section{
     background: inherit;
 }
 
-// general
-.content-section {
-    padding-top: 50px;
-}
-
 ///Header Styles
 
 header{
@@ -420,9 +446,9 @@ header{
 }
 
 .wallace{
-    margin-top: 30px;
+    margin-top: 15px;
     font-weight: 500;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 
@@ -435,6 +461,7 @@ header{
 
 //Property Features Section
 #floor-plans{
+    margin-top: 70px;
     .renders{
         .render-road{
             background: url(../images/render-road.jpg) no-repeat center center scroll;
@@ -517,7 +544,14 @@ img{
         top: -40px;
     }
     .even-higher{
-        top: -80px;
+        top: -100px;
+        position: relative;
+    }
+    .coogee{
+        margin-bottom: 5px;
+    }
+    #neighbourhood{
+        margin-bottom: -120px;
     }
 }
 .btn-circle {
@@ -599,19 +633,12 @@ img{
     width: 100%;
     height: 200px;
 }
-
+.content-section {
+        padding-bottom: 50px;
+    }
 @media(min-width:767px) {
     .content-section {
-        padding-top: 100px;
-        padding-bottom: 100px;
-    }
-
-    .download-section {
-        padding: 100px 0;
-    }
-
-    #map {
-        height: 400px;
+        padding-bottom: 70px;
     }
 }
 
@@ -731,7 +758,7 @@ footer{
 form{
     .rows{
         position: relative;
-        margin-bottom: 15px;
+        margin-bottom: 5px;
     }
     input, button{
         border:none;
@@ -742,6 +769,7 @@ form{
     }
     button{
         border: 1px solid $primary;
+        margin-top: 10px;
     }
     input{
         border-bottom: 1px solid $primary;
@@ -758,10 +786,10 @@ form{
         bottom: 0px;
         height: 8px;
         overflow: hidden;
-        width: 2px;        
+        width: 3px;        
     }
     .before{
-        left: -1px;
+        left: -2px;
     }
     .after{
         right: 0px;
