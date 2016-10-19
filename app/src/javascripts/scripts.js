@@ -48,7 +48,7 @@ var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userA
 
 function scrollingPattern() {
 
-    var windowHeight = $(window).height();
+    var windowHeight = ($(window).height() + 1);
     var fixedHeight = $('.fixed-wrap').height();
     if(isMobile) {
     $('.fixed-wrap').css('margin-top' , windowHeight);
@@ -112,11 +112,12 @@ function scrollingPattern() {
 // Even when the window is resized, run this code.
 $( document ).ready(function() {
   scrollingPattern();
+  console.log(isMobile);
 });
 window.addEventListener("orientationchange", function() {
   // Announce the new orientation number
   scrollingPattern();
-}, false);
+});
 if(!isMobile) {
   $(window).resize(function(){
       scrollingPattern();
