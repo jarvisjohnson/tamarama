@@ -99,10 +99,10 @@
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   .navbar-collapse {
-    max-height: $navbar-collapse-max-height;
+    max-height: 200px;
 
     @media (max-width: $screen-xs-min) and (orientation: landscape) {
-      max-height: 200px;
+      max-height: 100px;
     }
   }
 }
