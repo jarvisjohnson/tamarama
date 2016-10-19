@@ -170,35 +170,44 @@ $(window).scroll(function(event) {
   
 });
 
-function Utils() {
+
+function isScrolledIntoView(elem)
+{
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top -75;
+    var elemBottom = elemTop + $(elem).height() +175;
+
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
+
+
+function stopScroll(element) {
+
+   $(element).mousewheel(function(event, delta) {
+
+      this.scrollLeft -= (delta * 30);
+    
+      event.preventDefault();
+
+   });
 
 }
 
-Utils.prototype = {
-    constructor: Utils,
-    isElementInView: function (element, fullyInView) {
-        var pageTop = $(window).scrollTop();
-        var pageBottom = pageTop + $(window).height();
-        var elementTop = $(element).offset().top;
-        var elementBottom = elementTop + $(element).height();
+$(document).scroll(function(){
 
-        if (fullyInView === true) {
-            return ((pageTop < elementTop) && (pageBottom > elementBottom));
-        } else {
-            return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
-        }
-    }
-};
+var isElementInView = isScrolledIntoView($('.renders'));
 
-var Utils = new Utils();
+  if (isElementInView) {
+    console.log(isElementInView);
+    // stopScroll('.renders .slick-track')
 
-var isElementInView = Utils.isElementInView($('.renders'), false);
-
-if (isElementInView) {
-    console.log('in view');
 } else {
     console.log('out of view');
+    // return;
 }
+});
 
 // $(function() {
 
