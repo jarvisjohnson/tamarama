@@ -10,7 +10,6 @@
     "grunt-contrib-connect": "latest",
     "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-uglify": "^2.0.0",
-    "grunt-contrib-watch": "latest",
-    "grunt-postcss": "^0.8.0"
+    "grunt-contrib-watch": "latest"
   }
 }

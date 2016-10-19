@@ -597,26 +597,34 @@ header {}
     margin-top: 70px;
 
     .renders {
+
+        .render-aerial-1 {
+          background-image: url(../images/render-aerial-1.jpg);
+        }
+        .render-aerial-2 {
+          background-image: url(../images/render-aerial-2.jpg);
+        }
+        .render-garden {
+          background-image: url(../images/render-garden.jpg);
+        }
+        .render-living-1 {
+          background-image: url(../images/render-living-1.jpg);
+        }
+        .render-living-2 {
+          background-image: url(../images/render-living-2.jpg);
+        }
+        .render-panoramic {
+          background-image: url(../images/render-panoramic.jpg);
+        }
         .render-road {
-            background-image: url(../images/render-road.jpg);
+          background-image: url(../images/render-road.jpg);
         }
-
-        .render-living {
-            background-image: url(../images/render-living.jpg);
-        }
-
-        .render-dawn {
-            background-image: url(../images/render-dawn.jpg);
-        }
-
         .render {
             min-height: 100px;
             background-position: center center;
             background-repeat: no-repeat;
             background-attachment: scroll;
             background-size: 100% auto;
-
-            // min-height: 600px;
             margin: 0 25px;
             width: 80vw;
         }
