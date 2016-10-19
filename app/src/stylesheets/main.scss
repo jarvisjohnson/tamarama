@@ -17,6 +17,7 @@ body {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
     width: 100%;
     overflow-x: hidden;
+
     @media (min-width: 768px) {
         font-size: 23px;
     }
@@ -601,14 +602,25 @@ header {}
         }
 
         .render {
-            min-height: 200px;
+            min-height: 100px;
             background-position: center center;
             background-repeat: no-repeat;
             background-attachment: scroll;
             background-size: 100% auto;
-            min-height: 600px;
+
+            // min-height: 600px;
             margin: 0 25px;
             width: 80vw;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    #floor-plans {
+        .renders {
+            .render {
+                margin: 0 5px;
+            }
         }
     }
 }
@@ -1000,13 +1012,17 @@ form {
         float: left;
     }
 
+    p.quote {
+        padding-right: 50px;
+    }
+
     .navbar-right {
         float: right;
         max-height: 100px;
     }
 
     #contacter {
-        padding-bottom: 25px;
+        padding-bottom: 10px;
     }
 
     .navbar-fixed-top {
