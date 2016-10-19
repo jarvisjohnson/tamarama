@@ -169,3 +169,83 @@ $(window).scroll(function(event) {
   });
   
 });
+
+function Utils() {
+
+}
+
+Utils.prototype = {
+    constructor: Utils,
+    isElementInView: function (element, fullyInView) {
+        var pageTop = $(window).scrollTop();
+        var pageBottom = pageTop + $(window).height();
+        var elementTop = $(element).offset().top;
+        var elementBottom = elementTop + $(element).height();
+
+        if (fullyInView === true) {
+            return ((pageTop < elementTop) && (pageBottom > elementBottom));
+        } else {
+            return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
+        }
+    }
+};
+
+var Utils = new Utils();
+
+var isElementInView = Utils.isElementInView($('.renders'), false);
+
+if (isElementInView) {
+    console.log('in view');
+} else {
+    console.log('out of view');
+}
+
+// $(function() {
+
+//    $("body").mousewheel(function(event, delta) {
+
+//       this.scrollLeft -= (delta * 30);
+    
+//       event.preventDefault();
+
+//    });
+
+// });
+
+// var delta;
+// var currentSlideIndex = 0;
+// var scrollTimes;
+
+// function elementScroll (e) {
+
+//   // --- Scrolling up ---
+//   if (e.originalEvent.detail < 0 || e.originalEvent.wheelDelta > 0) { 
+
+//     delta--;
+
+//     if ( Math.abs(delta) >= scrollThreshold) {
+//     console.log('scroll-down');
+//     scrollTimes += 1;
+//     }
+//   }
+
+//   // --- Scrolling down ---
+//   else {
+
+//     delta++;
+
+//     if (delta >= scrollThreshold) {
+//       console.log('scroll-up');
+//       scrollTimes += 1;
+//     }
+//   }
+
+//   console.log("Scroll Times = " + scrollTimes);
+//   // Prevent page from scrolling
+//   return false;
+// }
+
+
+// $(window).on({
+//   'DOMMouseScroll mousewheel': elementScroll
+// });

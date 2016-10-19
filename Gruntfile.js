@@ -57,6 +57,7 @@ module.exports = function(grunt) {
                 'app/src/javascripts/bootstrap/scrollspy.js',
                 'app/src/javascripts/bootstrap/tab.js',
                 'app/src/javascripts/bootstrap/affix.js',
+                'app/src/javascripts/jquery.mousewheel.min.js',
                 'app/src/javascripts/slick/slick.js',
                 'app/src/javascripts/*.js',
                 'app/src/javascripts/_*.js'
