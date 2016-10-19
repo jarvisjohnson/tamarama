@@ -26,9 +26,10 @@ body {
 .intro {
     width: 100%;
     height: auto;
-    background: url(../images/header-still-sm.jpg) no-repeat center center scroll;
+    background: url(../images/header-still-lg.jpg) no-repeat center center scroll;
     background-size: cover;
     position: relative;
+    overflow: hidden;
 }
 
 #bg-video {
@@ -41,7 +42,7 @@ body {
     height: auto;
     z-index: -100;
     transform: translateX(-50%) translateY(-50%);
-    background: url(../images/header-still-sm.jpg) no-repeat;
+    background: url(../images/header-still-lg.jpg) no-repeat;
     background-size: cover;
 }
 
@@ -479,6 +480,13 @@ section {
 
 .navbar-fixed-bottom * {
     font-size: 16px;
+}
+
+/// Disable on Mobile
+@media (min-width: 768px) {
+    .navbar-fixed-bottom {
+        padding-bottom: 10px;
+    }
 }
 
 #contacter {
