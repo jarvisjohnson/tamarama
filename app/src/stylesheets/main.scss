@@ -163,9 +163,13 @@ a {
     &:hover,
     &:focus {
         text-decoration: none;
-        color: lighten($primary,10%);
+        color: darken($primary,10%);
     }
-    font-size: 0.9em
+    font-size: 1em
+}
+
+.navbar-fixed-top a{
+    font-size: .9em;
 }
 
 section{
@@ -243,7 +247,7 @@ section{
                 -moz-transition: background .3s ease-in-out;
                 transition: background .3s ease-in-out;
                 &:hover {
-                    color: lighten($primary,10%);
+                    color: darken($primary,10%);
                     outline: none;
                     background-color: transparent;
                 }
@@ -269,7 +273,7 @@ section{
                     // background-color: rgba(white, 0.5);
                     // text-decoration: underline;
                     &:hover {
-                        color: lighten($primary,10%);
+                        color: darken($primary,10%);
                         // text-decoration: underline;
                     }
                 }
@@ -277,7 +281,7 @@ section{
         }
     }
     @media(min-width:768px) {
-        padding: 20px 0;
+        padding: 0 0;
         border-bottom: none;
         letter-spacing: 1px;
         background: transparent;
@@ -368,11 +372,12 @@ font-weight: 700;
     overflow: hidden;
     .fullscreen-bg__video{
         position:absolute;
+        // width:100%;
         right: 0%;
         bottom: 0%;
-        min-width: 102%;
-        min-height: 102%;
-        width: auto;
+        // min-width: 102%;
+        // min-height: 102%;
+        width: 100%;
         height: auto;
     }
 }
@@ -477,20 +482,21 @@ header{
     margin-top: 70px;
     .renders{
         .render-road{
-            background: url(../images/render-road.jpg) no-repeat center center scroll;
+            background-image: url(../images/render-road.jpg) ;
         }    
         .render-living{
-            background: url(../images/render-living.jpg) no-repeat center center scroll;
+            background-image: url(../images/render-living.jpg) ;
         }            
         .render-dawn{
-            background: url(../images/render-dawn.jpg) no-repeat center center scroll;
+            background-image: url(../images/render-dawn.jpg) ;
         }            
         .render{
             min-height: 200px;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            background-size: cover;
-            -o-background-size: cover; 
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-size: 100% auto;
+            min-height: 600px;
             margin: 0 25px;
             width: 80vw;
         }        
@@ -526,6 +532,7 @@ span.number{
     border-radius: 100%;
     width: 24px;
     height: 24px;
+    font-weight: 500;
     /* margin-bottom: -12px; */
     line-height: 20px;
     font-family: dala-moa;
@@ -556,7 +563,7 @@ span.number{
     background-position: center top;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 100% auto;
+    background-size: cover;
     min-height: 600px;
 }
 
@@ -833,6 +840,9 @@ form{
     .navbar-right {
     float: right;
     max-height: 100px;
+    }
+    .navbar-nav > li {
+    float: none;
     }
 }
 @media(min-width:768px) {

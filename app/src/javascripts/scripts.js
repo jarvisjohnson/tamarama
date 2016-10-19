@@ -61,7 +61,7 @@ function scrollingPattern() {
 
     // Find the value of 90% of the viewport height
     var ninetypercent = .9 * windowHeight;
-    var eightypercent = .80 * windowHeight;
+    var eightypercent = .70 * windowHeight;
     var fortypercent = .30 * windowHeight;
     if(windowHeight < 400 ){
       var fortypercent = windowHeight;
@@ -70,7 +70,8 @@ function scrollingPattern() {
     if(isMobile) {
     $('#floor-plans .renders .render, .image-section').height(fortypercent);      
     }else{
-    $('#floor-plans .renders .render, .image-section').height(eightypercent);      
+    $('#floor-plans .renders .render').height(eightypercent);      
+    $('.image-section').height(windowHeight);
     }
 
     // When the document is scrolled ninety percent, toggle the classes

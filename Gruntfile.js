@@ -3,6 +3,7 @@ module.exports = function(grunt) {
 
     // Project configuration.
     grunt.initConfig({
+  
         pkg: grunt.file.readJSON('package.json'),
 
         config: {
@@ -84,7 +85,26 @@ module.exports = function(grunt) {
                     environment: 'production'
                 }
             },
-        },        
+        }, 
+
+        postcss: {
+            options: {
+
+              map: {
+                  inline: false, // save all sourcemaps as separate files...
+                  annotation: 'app/public/css/maps/' // ...to the specified directory
+              },
+
+              processors: [
+                require('pixrem')(), // add fallbacks for rem units
+                require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes
+                require('cssnano')() // minify the result
+              ]
+            },
+            dist: {
+              src: 'app/public/css/*.css'
+            }
+        },                 
 
         watch: {
             uglify: {
@@ -118,11 +138,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-compass');
+    grunt.loadNpmTasks('grunt-postcss');    
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task(s).
     grunt.registerTask('default', ['connect:livereload', 'compass:dev', 'uglify', 'watch']);
     // prod build
-    grunt.registerTask('prod', [ 'uglify', 'compass:prod']);
+    grunt.registerTask('prod', [ 'uglify', 'compass:prod', 'postcss']);
 
 };
