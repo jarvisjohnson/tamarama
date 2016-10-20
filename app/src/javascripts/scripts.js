@@ -125,6 +125,13 @@ if (!isMobile) {
         scrollingPattern();
     });
 }
+if (!isMobile) {
+  $(document).ready(function() {  
+    var poolHeight = $('#pool').height();
+    $('#coffee').height(poolHeight);
+    $('.orchard-st').css('position', 'absolute');
+  });
+}
 
 (function($) {
 
