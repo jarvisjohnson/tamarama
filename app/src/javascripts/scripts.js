@@ -34,7 +34,7 @@ if (!isMobile) {
     });
 
     // Closes the Responsive Menu on Menu Item Click
-    $('.navbar-collapse ul li a').click(function() {
+    $('.navbar-collapse ul li a').click(function() {ch
         $(this).closest('.collapse').collapse('toggle');
     });
 
@@ -49,6 +49,11 @@ function getDocHeight() {
     );
 }
 
+
+// function adJustMarginBodyHeight() {
+
+// }
+
 function scrollingPattern() {
 
     var windowHeight = ($(window).height() + 1);
@@ -61,7 +66,7 @@ function scrollingPattern() {
     $('.intro, #about').height(windowHeight);
     //$( '.intro' ).css('margin-bottom' , fixedHeight);
     $('body').css('height', getDocHeight());
-
+    console.log('body sized');
     // Find the value of 90% of the viewport height
     var ninetypercent = .90 * windowHeight;
     var eightypercent = .80 * windowHeight;
@@ -103,10 +108,10 @@ function scrollingPattern() {
                 // Add the "sticky" class
                 $('.fixed-wrap').addClass('fix');
             } else {
-                // Else remove it.
-                $('.fixed-wrap').removeClass('fix').css('margin-top', windowHeight);
-                $('body').css('height', getDocHeight());
-
+                $('.fixed-wrap').removeClass('fix')
+                    $(this).css('margin-top', windowHeight);
+                    $('body').css('height', getDocHeight());
+                // adJustMarginBodyHeight();
             };
         }
 
@@ -117,14 +122,25 @@ function scrollingPattern() {
 $(document).ready(function() {
     scrollingPattern();
 });
-window.addEventListener("orientationchange", function() {
-    scrollingPattern();
-});
-if (!isMobile) {
+jQuery(function($){
+var windowWidth = $(window).width();
+
     $(window).resize(function() {
-        scrollingPattern();
+        if(windowWidth != $(window).width()){
+        location.reload();
+        return;
+        }
     });
-}
+});
+// window.addEventListener("orientationchange", function() {
+//     scrollingPattern();
+// });
+// if (!isMobile) {
+//     $(window).resize(function() {
+//         scrollingPattern();
+//         console.log('window moved');
+//     });
+// }
 if (!isMobile) {
   $(document).ready(function() {  
     var poolHeight = $('#pool').height();
