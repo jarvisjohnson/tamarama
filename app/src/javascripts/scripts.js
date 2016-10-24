@@ -49,11 +49,6 @@ function getDocHeight() {
     );
 }
 
-
-// function adJustMarginBodyHeight() {
-
-// }
-
 function scrollingPattern() {
 
     var windowHeight = ($(window).height() + 1);
@@ -106,10 +101,12 @@ function scrollingPattern() {
             if (y < windowHeight) {
 
                 // Add the "sticky" class
-                $('.fixed-wrap').addClass('fix');
+                $('.fixed-wrap').addClass('fix')
+                .css('margin-top', 'initial');
+                $('body').css('height', getDocHeight());                
             } else {
                 $('.fixed-wrap').removeClass('fix')
-                    $(this).css('margin-top', windowHeight);
+                    .css('margin-top', windowHeight);
                     $('body').css('height', getDocHeight());
                 // adJustMarginBodyHeight();
             };
@@ -122,6 +119,7 @@ function scrollingPattern() {
 $(document).ready(function() {
     scrollingPattern();
 });
+
 jQuery(function($){
 var windowWidth = $(window).width();
 
@@ -132,15 +130,7 @@ var windowWidth = $(window).width();
         }
     });
 });
-// window.addEventListener("orientationchange", function() {
-//     scrollingPattern();
-// });
-// if (!isMobile) {
-//     $(window).resize(function() {
-//         scrollingPattern();
-//         console.log('window moved');
-//     });
-// }
+
 if (!isMobile) {
   $(document).ready(function() {  
     var poolHeight = $('#pool').height();
@@ -150,17 +140,6 @@ if (!isMobile) {
 }
 
 (function($) {
-
-    /**
-     * Copyright 2012, Digital Fusion
-     * Licensed under the MIT license.
-     * http://teamdf.com/jquery-plugins/license/
-     *
-     * @author Sam Sehnert
-     * @desc A small plugin that checks whether elements are within
-     *     the user visible viewport of a web browser.
-     *     only accounts for vertical position, not horizontal.
-     */
 
     $.fn.visible = function(partial) {
 
